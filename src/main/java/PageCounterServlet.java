@@ -6,20 +6,23 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello")
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet(name = "PageCounterServlet", urlPatterns = "/counter")
+public class PageCounterServlet extends HttpServlet {
+
+    private int count = 0;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String endUrl = request.getParameter("name");
-
-		if (endUrl == null) {
-			out.println("<h1>Hello, World!</h1>");
-		} else {
-		    out.println("<h1>Hello, " + endUrl + "!");
+        String endUrl = request.getParameter("count");
+        if (endUrl == null) {
+            count += 1;
+            out.println("<h1>This page has been viewed " + count + " times.");
+        } else if (endUrl.equals("reset")) {
+            count = 1;
+            out.println("<h1>This page has been viewed " + count + " times.");
         }
     }
 
