@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: meadalicious
-  Date: 1/19/21
-  Time: 3:17 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% request.setAttribute("isLoggedIn", false); %>
 <%! int pageNumber = 1; %>
 <html>
 <head>
@@ -15,7 +10,9 @@
 
     <%@include file="partials/navbar.jsp"%>
 
-    <h1>Hello Jupiter!</h1>
+    <c:choose>
+        <c:when test="${isLoggedIn}">
+                <h1>Hello Jupiter!</h1>
     <%-- Testing! --%>
     <!-- 123! -->
     <p>The page number is: <%= pageNumber %></p>
@@ -31,6 +28,8 @@
         <input type="text" id="item" name="items">
         <button type="submit">Add to list</button>
     </form>
+        </c:when>
+    </c:choose>
 
 </body>
 </html>
