@@ -1,0 +1,13 @@
+What are JSPs and why do we use them?
+- Java Server Pages allow us to create HTML pages with dynamic content mixed within Java code.
+
+What are JSP tags?
+  Directive tag? - Specifies content type of the page <%@ %>
+  Declaration tag? - Used to declare variables in a jsp file
+  Expression tag? - <%= %>
+  Scriptlet tag? Why are they no longer commonly used?
+
+  JSP comment tag vs. HTML comment tag?
+
+What are partials and why are they awesome? - HTML templates/components that you can use and reuse them in any jsp
+How can I use them in JSPs? - <%@include file="partials/...jsp"%>
