@@ -31,5 +31,4 @@ public class Author {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
 }
