@@ -2,7 +2,10 @@ import models.Album;
 import models.Author;
 import models.Quote;
 
+import java.util.ArrayList;
+
 public class BeanTest {
+
     public static void main(String[] args) {
         Album album = new Album();
         album.setId(1);
@@ -19,12 +22,25 @@ public class BeanTest {
         author.setFirstName("Writer");
         author.setLastName("Dude");
 
-        Quote quote = new Quote();
-        quote.setId(1);
-        quote.setAuthor(author);
-        quote.setContent("This is my quote!");
+        Quote firstQuote = new Quote();
+        firstQuote.setId(1);
+        firstQuote.setAuthor(author);
+        firstQuote.setContent("This is my quote!");
 
-        System.out.println("The quote is: " + quote.getContent());
-        System.out.println("The author of this quote is: " + quote.getAuthor().getFirstName() + " " + quote.getAuthor().getLastName());
+        Quote secondQuote = new Quote();
+        secondQuote.setId(2);
+        secondQuote.setAuthor(author);
+        secondQuote.setContent("This is my second quote! It's longer than the first!");
+
+        ArrayList<Quote> quotes = new ArrayList<>();
+        quotes.add(firstQuote);
+        quotes.add(secondQuote);
+
+        for (Quote q : quotes) {
+            System.out.println("The quote is: " + q.getContent());
+            System.out.println("The author is: " + q.getAuthor().getFirstName() + " " + q.getAuthor().getLastName());
+        }
+
     }
+
 }
