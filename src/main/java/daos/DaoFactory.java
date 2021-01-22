@@ -1,3 +1,8 @@
+package daos;
+
+import daos.ListProducts;
+import daos.Products;
+
 public class DaoFactory {
     private static Products productsDao;
 

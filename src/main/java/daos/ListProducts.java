@@ -1,9 +1,11 @@
+package daos;
+
 import models.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class ListProducts implements Products {
+public class ListProducts implements Products {
     private List<Product> products = new ArrayList();
 
     // When an instance of this class is created, we'll populate the
