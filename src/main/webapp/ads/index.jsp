@@ -12,6 +12,7 @@
         <div class="ad">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+            <p>- Posted from user ID# ${ad.userId} -</p>
         </div>
     </c:forEach>
 
